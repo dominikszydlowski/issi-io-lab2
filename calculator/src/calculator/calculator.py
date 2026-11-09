@@ -11,8 +11,11 @@ class Calculator:
 
     def divide(self):
         if self._op2 == 0:
-            return "Nie można dzielić przez zero"
-        return self._op1 / self._op2
+            return "Division by zero"
+
+        result = self._op1 / self._op2
+        # zapisuje wynik "ładnie" dla integera
+        return int(result) if result.is_integer() else result
 
     def subtract(self):
         return self._op1 - self._op2
