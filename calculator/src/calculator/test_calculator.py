@@ -1,7 +1,8 @@
 import unittest
 from .calculator import Calculator
 
-class MyTestCase(unittest.TestCase):
+class CalculatorTestCase(unittest.TestCase):
+
     def test_sum(self):
         calc = Calculator(2, 3)
         assert calc.sum() == 5
