@@ -35,4 +35,4 @@ def calculate():
             return {"error": "Unknown operation"}, 400
 
     return f"{arg1} {op_txt} {arg2} = {result}"
-    
+
