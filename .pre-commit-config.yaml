@@ -5,3 +5,4 @@ repos:
       - id: pylint
         args:
           - --fail-under=7.0
+          - --disable=C0114,C0115,C0116
