@@ -17,8 +17,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: ./calculator
+
     steps:
     - uses: actions/checkout@v4
+    
     - name: Set up Python 3.14
       uses: actions/setup-python@v3
       with:
