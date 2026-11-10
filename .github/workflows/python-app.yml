@@ -43,5 +43,4 @@ jobs:
         uv run --python 3.14 flake8 src/calculator --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
    
     - name: Test with pytest
-      run: |
-        pytest
+      run: uv run --python 3.14 pytest --cov=calculator --cov-report=term-missing
