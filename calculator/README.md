@@ -1,4 +1,4 @@
-# Rozwiązanie laboratorium – Kalkulator i aplikacja webowa
+# Rozwiązanie – Kalkulator i aplikacja webowa
 
 W tym katalogu znajduje się rozwiązanie laboratorium obejmujące implementację kalkulatora oraz aplikacji webowej.
 
