@@ -1,24 +1,49 @@
-from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import Page, expect
 
 
-def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context()
-    page = context.new_page()
+def test_strona_glowna(page: Page):
     page.goto("https://www.informatyka.agh.edu.pl/pl/")
-    page.get_by_role("link").first.click()
+
+    expect(
+        page.get_by_role("heading", name="Współpraca")
+    ).to_be_visible()
+
+
+def test_o_wydziale(page: Page):
+    page.goto("https://www.informatyka.agh.edu.pl/pl/")
+
     page.get_by_role("link", name="Wydział", exact=True).click()
     page.get_by_role("link", name="O Wydziale").click()
-    page.get_by_role("link", name="Strona główna").click()
+
+    expect(
+        page.get_by_role("heading", name="O Wydziale")
+    ).to_be_visible()
+
+    expect(
+        page.get_by_text("Adres siedziby:")
+    ).to_have_count(1)
+
+
+def test_nasze_kierunki(page: Page):
+    page.goto("https://www.informatyka.agh.edu.pl/pl/")
+
     page.get_by_role("link", name="Nasze kierunki").click()
-    page.get_by_role("heading", name="Nasze kierunki").click()
+
+    expect(
+        page.get_by_role("heading", name="Nasze kierunki")
+    ).to_be_visible()
+
+
+def test_zmiana_url(page: Page):
+    page.goto("https://www.informatyka.agh.edu.pl/pl/")
+
+    page.get_by_role("link", name="Nasze kierunki").click()
     page.get_by_role("link", name="Tworzenie przestrzeni").click()
-    page.get_by_role("heading", name="Tworzenie przestrzeni").click()
 
-    # ---------------------
-    context.close()
-    browser.close()
+    print(f"Aktualny URL: {page.url}")
 
-
-with sync_playwright() as playwright:
-    run(playwright)
+    expect(page).to_have_url(
+        "https://www.informatyka.agh.edu.pl/pl/studenci/"
+        "dla-kandydatow/kierunki/"
+        "tworzenie-przestrzeni-wirtualnych-i-gier/"
+    )
