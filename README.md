@@ -1,10 +1,23 @@
-# issi-io-lab2
-Repo do zadania z Inżynierii oprogramowania - lab2
+# Inżynieria oprogramowania – Lab 2 (issi-io-lab2)
 
-W repozytorium umieściłem dwa projekty pythona: calculator oraz playwright-test.
-W calculator/htmlcov są wygenerowane wyniki testów w tym sparametryzowane testy
-Projekty są spięte z pylint tak jak było to opisane w konspekcie
-Repozytorium ma ustawione akcje, issues zgodnie z konspektem
+Repo do zadania z Inżynierii oprogramowania – laboratorium 2.
+
+## Zawartość repozytorium
+
+W repozytorium znajdują się dwa projekty w Pythonie:
+
+- calculator – aplikacja kalkulatora wraz z testami jednostkowymi i parametryzowanymi.
+- playwright-tests – projekt zawierający automatyczne testy aplikacji webowej z wykorzystaniem Playwright.
+
+## Testy i raporty
+
+W katalogu `calculator/htmlcov` znajdują się wygenerowane raporty pokrycia kodu testami (coverage).
+
+## Konfiguracja
+
+- Projekty są zintegrowane z Pylint zgodnie z konspektem.
+- Repozytorium zawiera skonfigurowane GitHub Actions.
+- Utworzono GitHub Issues zgodnie z wymaganiami konspektu.
 
 [![Pylint](https://github.com/dominikszydlowski/issi-io-lab2/actions/workflows/pylint.yml/badge.svg)](https://github.com/dominikszydlowski/issi-io-lab2/actions/workflows/pylint.yml)
 
