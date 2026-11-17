@@ -37,7 +37,8 @@ def test_divide_float():
 
 def test_divide_by_zero():
     calc = Calculator(10, 0)
-    assert calc.divide() == "Division by zero"
+    with pytest.raises(ZeroDivisionError):
+        calc.divide()
 
 
 def test_multiply_float():

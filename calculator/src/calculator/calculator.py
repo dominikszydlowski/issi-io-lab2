@@ -11,7 +11,7 @@ class Calculator:
 
     def divide(self):
         if self._op2 == 0:
-            return "Division by zero"
+            raise ZeroDivisionError("Division by zero")
 
         result = self._op1 / self._op2
         # zapisuje wynik "ładnie" dla integera
